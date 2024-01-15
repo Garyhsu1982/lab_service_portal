@@ -1,63 +1,62 @@
-Institute;Instrument;Model;Software;
-DBM;SEM; Zeiss SUPRA 40 VP;;
-DBM;EDS;Therom Fisher Noran System 7;;
-DBM;pXRF;Therom Fisher  Niton Xl3t GOLDD;;
-DBM;pXRF;Therom Fisher  Niton Xl3t GOLDD+;;
-DBM;HR-ICP-MS;Therom Fisher Element XR;;
-DBM;MC-ICP-MS;Therom Fishe Neptune XT;;
-DBM;Ion Chromatograph (IC);Dionex ICS 1600;;
-DBM;Py-GC-MS;Thermo Fisher;;
-DBM;Multi-Shot pyrolyzer;Frontier Labs;;
-DBM;FTIR;Thermo Fisher;;
-DBM;FTIR;Thermo Fisher;;
-DBM;portable-FTIR;Agilent;;
-DBM;Sample preparation equipment;;;
-DBM;Furnaces;;;
-DBM;Optical microscope;;;
-DBM;Clean room;EN ISO 14644-1:1999;;
-DBM;XRD;Panalytical Xpert Pro;;
-Leiza;Portable digital microscope;DINO-LITE Edge;DinoCapture;
-Leiza;Portable digital microscope;DINO-LITE Pro;DinoCapture;
-Leiza;Portable digital microscope;DINO-LITE Pro;DinoCapture;
-Leiza;Portable 3D scanner;HP 3D Structured Light 3D-Scanner Pro S2;HP 3D Scan Pro 5.5.0;
-Leiza;High-resolution 3D scanner;AICON smartSCAN-HE R8;AICON OptoCat 2020 + GOM Inspect Pro 2021;
-Leiza;Digital microscope;ZEISS Smartzoom5;ZEISS Smartzoom 1.4 + ZEN starter 2.7;
-Leiza;Stereo-microscope;ZEISS SteREO Discovery.V8;ZEISS ZEN starter 2.7;
-Leiza;Stereo-microscope;ZEISS Stemi 305;-;
-Leiza;Upright light microscope;ZEISS AxioScope.A1;ZEISS ZEN core 2.7 + Helicon Focus 8.1;
-Leiza;Upright light microscope;ZEISS AxioLab.A1;ZEISS ZEN starter 2.7;
-Leiza;Confocal/light microscope;ZEISS Imager.Z2 Vario + LSM800 MAT;ZEISS ZEN blue 2.6 + ZEN core 2.7 + ConfoMap 8.2;
-Leiza;SEM;ZEISS EVO25;ZEISS SmartSEM 6.08 + SmartSEM Touch 2 + ZEN blue 3.5 + 3DSM Metrology 8.2;
-Leiza;EDS;BRUKER Quantax XFlash 6|30M;BRUKER Esprit 2.3;
-Leiza;Macroscope;Wild M420;-;
-Leiza;Macroscope;Zeiss Stemi 2000 c;;
-Leiza;Digital microscope;KEYENCE VHX-6000;KEYENCE VHX software + VHX-6000 Communication software;
-Leiza;CT;BAKER HUGHES Phoenix V|tome|x L450;BAKER HUGHES datos|x + VOLUME GRAPHICS VGSTUDIO MAX;
-Leiza;High-speed camera;AOS Q-PRI 104C;AOS Imaging Studio V4;
-Leiza;Combined reflected & transmitted light microscope;LEICA Leitz DMRX (Type 301-371.010);;
-Leiza;Xray tube;SEIFERT Isovolt 320 HS;-;
-Leiza;Micro-XRF;Bruker M4 Tornado;Esprit M4 Tornado;
-Leiza;portable XRF;Bruker Tracer IV-SD;Bruker S1;
-Leiza;Mikro-LIBS;IESL-FORTH;LabView 2012 (National Instruments);
-Rathgan;Environmental Scanning Electron Microscope (SEM);Quanta 200;;
-Rathgan;EDS ;Brunker X Flash 4010 ;ESPRIT;
-Rathgan;FT-IR;Perkin Elmer Paragon 1000 PC;;
-Rathgan;Spectrophotometers;DIN 5033 (Dr. Lang);;
-Rathgan;Spectrophotometers;CM 2600d (Konica Minolta);;
-Rathgan;Multispectral camera ;Hasselblad 503 CXI;;
-Rathgan;High performance liquid chromatography (HPLC);Agilent Infinity 1260 ;;
-Rathgan;Ion Chromatograph (IC);Metrohm Type 690;;
-Rathgan;Raman;Horiba XploRa;;
-Rathgan;micro-XRF;Brunker ArtTAX Pro ;;
-Rathgan;pXRF;Elio XGLab® ;;
-Rathgan;Py-GC-MS;Agilent 5977A Series;;
-Rathgan;Multi-Shot pyrolyzer;EGA/Py-3030D Frontier Laboratories Ltd;AMDIS, NIST & ESCAPE databanks;
-Rathgan;TD-/PY-GC-MS;Agilent GC 7890B, MSD 5977A;F-Search , NIST & ESCAPE databanks;
-Rathgan;XRD;PW 1729, PW 1820 ;;
-Rathgan;Digital microscope;Keyence  VHX-500FD;;
-Rathgan;UV digital microscope;Dino-Lite AM4013FVT2;;
-Rathgan;Optical microscope;Zeiss Axio Imager.A2m;Jenoptik – ProgRes Cfcool (digital camera);
-Rathgan;Sample preparation;;;
-Rathgan;Reflection-Spectrometer connected with Axio;Zeiss PDA VIS Spektrometer (MCS621 VIS II);SpectraVision;
-Rathgan;Optical binocular microscope;Zeiss V8 Discovery;Jenoptik – ProgRes Cfcool (digital camera);
-Rathgan;Polarized microscope;;;
+Institute,Device,Model,Software
+DBM,SEM, Zeiss SUPRA 40 VP,
+DBM,EDS,Therom Fisher Noran System 7,
+DBM,pXRF,Therom Fisher  Niton Xl3t GOLDD,
+DBM,pXRF,Therom Fisher  Niton Xl3t GOLDD+,
+DBM,HR-ICP-MS,Therom Fisher Element XR,
+DBM,MC-ICP-MS,Therom Fishe Neptune XT,
+DBM,Ion Chromatograph (IC),Dionex ICS 1600,
+DBM,Py-GC-MS,Thermo Fisher,
+DBM,Multi-Shot pyrolyzer,Frontier Labs,
+DBM,FTIR,Thermo Fisher,
+DBM,FTIR,Thermo Fisher,
+DBM,portable-FTIR,Agilent,
+DBM,Sample preparation,,
+DBM,Furnaces,,
+DBM,Optical microscope,,
+DBM,Clean room,EN ISO 14644-1:1999,
+DBM,XRD,Panalytical Xpert Pro,
+Leiza,Portable digital microscope,DINO-LITE Edge,DinoCapture
+Leiza,Portable digital microscope,DINO-LITE Pro,DinoCapture
+Leiza,Portable digital microscope,DINO-LITE Pro,DinoCapture
+Leiza,Portable 3D scanner,HP 3D Structured Light 3D-Scanner Pro S2,HP 3D Scan Pro 5.5.0
+Leiza,High-resolution 3D scanner,AICON smartSCAN-HE R8,AICON OptoCat 2020 + GOM Inspect Pro 2021
+Leiza,Digital microscope,ZEISS Smartzoom5,ZEISS Smartzoom 1.4 + ZEN starter 2.7
+Leiza,Stereo-microscope,ZEISS SteREO Discovery.V8,ZEISS ZEN starter 2.7
+Leiza,Stereo-microscope,ZEISS Stemi 305,-
+Leiza,Upright light microscope,ZEISS AxioScope.A1,ZEISS ZEN core 2.7 + Helicon Focus 8.1
+Leiza,Upright light microscope,ZEISS AxioLab.A1,ZEISS ZEN starter 2.7
+Leiza,Confocal/light microscope,ZEISS Imager.Z2 Vario + LSM800 MAT,ZEISS ZEN blue 2.6 + ZEN core 2.7 + ConfoMap 8.2
+Leiza,SEM,ZEISS EVO25,ZEISS SmartSEM 6.08 + SmartSEM Touch 2 + ZEN blue 3.5 + 3DSM Metrology 8.2
+Leiza,EDS,BRUKER Quantax XFlash 6|30M,BRUKER Esprit 2.3
+Leiza,Macroscope,Wild M420,-
+Leiza,Macroscope,Zeiss Stemi 2000 c,
+Leiza,Digital microscope,KEYENCE VHX-6000,KEYENCE VHX software + VHX-6000 Communication software
+Leiza,CT,BAKER HUGHES Phoenix V|tome|x L450,BAKER HUGHES datos|x + VOLUME GRAPHICS VGSTUDIO MAX
+Leiza,High-speed camera,AOS Q-PRI 104C,AOS Imaging Studio V4
+Leiza,Combined reflected & transmitted light microscope,LEICA Leitz DMRX (Type 301-371.010),
+Leiza,Xray tube,SEIFERT Isovolt 320 HS,-
+Leiza,Micro-XRF,Bruker M4 Tornado,Esprit M4 Tornado
+Leiza,portable XRF,Bruker Tracer IV-SD,Bruker S1
+Leiza,Mikro-LIBS,IESL-FORTH,LabView 2012 (National Instruments)
+Rathgan,Environmental Scanning Electron Microscope (SEM),Quanta 200,
+Rathgan,EDS ,Brunker X Flash 4010 ,ESPRIT
+Rathgan,FT-IR,Perkin Elmer Paragon 1000 PC,
+Rathgan,Spectrophotometers,DIN 5033 (Dr. Lang),
+Rathgan,Spectrophotometers,CM 2600d (Konica Minolta),
+Rathgan,Multispectral camera ,Hasselblad 503 CXI,
+Rathgan,High performance liquid chromatography (HPLC),Agilent Infinity 1260 ,
+Rathgan,Ion Chromatograph (IC),Metrohm Type 690,
+Rathgan,Raman,Horiba XploRa,
+Rathgan,micro-XRF,Brunker ArtTAX Pro ,
+Rathgan,pXRF,Elio XGLab® ,
+Rathgan,Py-GC-MS,Agilent 5977A Series,
+Rathgan,Multi-Shot pyrolyzer,EGA/Py-3030D Frontier Laboratories Ltd,"AMDIS, NIST & ESCAPE databanks"
+Rathgan,TD-/PY-GC-MS,"Agilent GC 7890B, MSD 5977A","F-Search , NIST & ESCAPE databanks"
+Rathgan,XRD,"PW 1729, PW 1820 ",
+Rathgan,Digital microscope,Keyence  VHX-500FD,
+Rathgan,UV digital microscope,Dino-Lite AM4013FVT2,
+Rathgan,Optical microscope,Zeiss Axio Imager.A2m,Jenoptik – ProgRes Cfcool (digital camera)
+Rathgan,Sample preparation,,
+Rathgan,Reflection-Spectrometer connected with Axio,Zeiss PDA VIS Spektrometer (MCS621 VIS II),SpectraVision
+Rathgan,Optical binocular microscope,Zeiss V8 Discovery,Jenoptik – ProgRes Cfcool (digital camera)
