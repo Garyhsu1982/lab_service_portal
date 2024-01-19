@@ -6,10 +6,12 @@ By using the [JSON-Form schema generator](https://github.com/KIKIRPA/form-genera
 
 [Technique model](https://bytes.kikirpa.be/form-generator/index.html?url=https://raw.githubusercontent.com/Garyhsu1982/lab_service_portal/main/technique-model-NFDI-v0.1.json)
 
-[Tool model](https://raw.githubusercontent.com/Garyhsu1982/lab_service_portal/main/tool-model-NFDI-v0.1.json)
+[Tool model](https://bytes.kikirpa.be/form-generator/index.html?url=https://raw.githubusercontent.com/Garyhsu1982/lab_service_portal/main/tool-model-NFDI-v0.1.json)
 
-[Method model](https://raw.githubusercontent.com/Garyhsu1982/lab_service_portal/main/method-model-NFDI-v0.1.json)
+[Method model](https://bytes.kikirpa.be/form-generator/index.html?url=https://raw.githubusercontent.com/Garyhsu1982/lab_service_portal/main/method-model-NFDI-v0.1.json)
 
-[Document model](https://raw.githubusercontent.com/Garyhsu1982/lab_service_portal/main/document-model-NFDI-v0.1.json)
+[Document model](https://bytes.kikirpa.be/form-generator/index.html?url=https://raw.githubusercontent.com/Garyhsu1982/lab_service_portal/main/document-model-NFDI-v0.1.json)
+
+
 
  
