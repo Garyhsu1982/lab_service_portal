@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://e-rihs.io/schema/method-v0.2.schema.json",
+  "$id": "https://raw.githubusercontent.com/Garyhsu1982/lab_service_portal/main/method-model-NFDI-v0.1.json",
   "title": "NFDI4O Lab Standard Method",
   "description": "The schema outlines the required metadata to define a standard method or protocol",
   "type": "object",
