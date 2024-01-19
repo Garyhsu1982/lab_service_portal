@@ -4,7 +4,7 @@
     "title": "NFDI4O laboratory  technique",
     "type": "object",
     "required": [
-      "e-rihs_vocab_url",
+      "NFDI4Olab_vocab_url",
       "short_description",
       "measurable_properties"
     ],
@@ -15,8 +15,8 @@
         "type": "string",
         "format": "uri"
       },
-      "e-rihs_vocab_url": {
-        "title": "E-RIHS Vocabulary URL",
+      "NFDI4Olab_vocab_url": {
+        "title": "NFDI4 Lab Vocabulary URL",
         "description": "E-RIHS Vocabulary will provide the core SKOS metadata for the given technique, specifically labels, scope notes and relationships to other techniques.",
         "type": "array",
         "items": {
