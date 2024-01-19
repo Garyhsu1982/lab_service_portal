@@ -1,0 +1,35 @@
+{
+    "working_distances": [
+        "not applicable"
+    ],
+    "acquisition_areas": [
+        "not applicable"
+    ],
+    "has_url": [
+        {
+            "link_type": "documentation",
+            "url": "portablexrf.de"
+        }
+    ],
+    "output_data_type": [
+        "X/Y data"
+    ],
+    "has_defined_components": [
+        {
+            "component_type": "Detector",
+            "Tool PID": "xrf123"
+        },
+        {
+            "component_type": "Camera",
+            "Tool PID": "xrf456"
+        }
+    ],
+    "tool_type": "Equipment",
+    "nfdi4olab_pid": "DBM-test-PID",
+    "name": "Portable XRF",
+    "last_checked_date": "2024-01-01",
+    "manufacturer": "Brunker",
+    "model": "Gold++",
+    "serial_number": "de34123213",
+    "callibration_pid": "cal22012023"
+}

@@ -1,0 +1,35 @@
+{
+    "method_parameter": [
+        {
+            "parameter_type": "wavelength",
+            "parameter_unit": "nm",
+            "parameter_value": "575"
+        },
+        {
+            "parameter_type": "working distance",
+            "parameter_unit": "cm",
+            "parameter_value": "0.5"
+        },
+        {
+            "parameter_unit": "count",
+            "parameter_value": "1000",
+            "parameter_type": "signal count"
+        }
+    ],
+    "method_related_tool": [
+        {
+            "tool_pid": "portableXRF123",
+            "tool_role": "Main Equipment"
+        }
+    ],
+    "method_alt_label": [
+        "PXRF"
+    ],
+    "nfdi4olab_pid": "DBM-test-PID",
+    "method_preferred_label": "Method for Portable XRF",
+    "method_type": "Analysis Method",
+    "method_technique": "Scanning XRF",
+    "method_version": "1",
+    "method_creation_date": "2024-01-01",
+    "method_author": "Gary"
+}

@@ -1,0 +1,31 @@
+{
+    "reference": [
+        {
+            "reference role": [
+                "published examples"
+            ],
+            "reference": "John et al. ",
+            "url": "doi-jon/123345"
+        }
+    ],
+    "example_outputs": [
+        {
+            "pid": "output-example.io",
+            "comment": "the dataset from a previous project"
+        }
+    ],
+    "measurable_properties": [
+        {
+            "material_category": [
+                "glass",
+                "ceramics"
+            ],
+            "property": "composition"
+        }
+    ],
+    "NFDI4Olab_vocab_url": [
+        "NFDI4.lab.vocab.de"
+    ],
+    "nfdi4olab_pid": "DBM-test-PID",
+    "short_description": "Techniques that investigation the composition of inorganic materials"
+}

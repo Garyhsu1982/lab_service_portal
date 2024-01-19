@@ -11,9 +11,9 @@
       "document_type"
     ],
     "properties": {
-      "e-rihs_pid": {
-        "title": "E-RIHS Service PID",
-        "description": "Please link to the E-RIHS Service ID",
+      "nfdi4olab_pid": {
+        "title": "NFDI4Olab PID",
+        "description": "Persistent identifier for the given laboratory service",
         "type": "string",
         "format": "uri"
       },
