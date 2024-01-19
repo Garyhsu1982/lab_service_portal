@@ -1,0 +1,123 @@
+{
+    "key_performance_indicators": [],
+    "service_access_unit": [
+        "Day"
+    ],
+    "service_keywords": [
+        "metal analysis, copper alloys"
+    ],
+    "service_example_inputs": [
+        "please refer to the landing page"
+    ],
+    "service_example_outputs": [
+        "please refer to the landing page"
+    ],
+    "service_reference": [
+        {
+            "reference_citation": "Prange et al.",
+            "reference_type": "Service report",
+            "reference_url": "doi.12344567"
+        }
+    ],
+    "service_links": [
+        {
+            "link_type": "Project webpage",
+            "link_url": "http://dbm-lab.de"
+        }
+    ],
+    "service_team": [
+        {
+            "team_member_roles": [
+                "Director"
+            ],
+            "team_member_id": "123345",
+            "team_member_start_date": "2022-04-04"
+        },
+        {
+            "team_member_roles": [
+                "Co-Director"
+            ],
+            "team_member_id": "23456",
+            "team_member_start_date": "2022-02-02"
+        }
+    ],
+    "service_resources": [
+        "In-House metal collections"
+    ],
+    "service_functions": [
+        "Materials Analysis"
+    ],
+    "service_categories": [
+        "Collection Management Tool"
+    ],
+    "research_disciplines": [
+        "archaeology",
+        "materials science",
+        "conservation science"
+    ],
+    "service_contact": [
+        {
+            "contact_role": [
+                "Equipment Operator"
+            ],
+            "contact_id": "123",
+            "contact_person": "Jan",
+            "contact_email": "Jan@bergbaumuseum.de",
+            "contact_phone": "012344567"
+        },
+        {
+            "contact_role": [
+                "Equipment Operator"
+            ],
+            "contact_id": "456",
+            "contact_person": "Moritz",
+            "contact_email": "Moritz@bergbaumuseum.de",
+            "contact_phone": "012345567"
+        }
+    ],
+    "service_provider": [
+        {
+            "provider_id": "DBM123",
+            "provider_address": "Herner Str.45, 44807 Bochum"
+        }
+    ],
+    "service_techniques": [
+        "XRF",
+        "ICP-MS",
+        "SEM-EDS"
+    ],
+    "support_activity": [
+        {
+            "type": [
+                "Access",
+                "Administration",
+                "Development",
+                "Maintenance"
+            ],
+            "provider": "DFG",
+            "summary": "Fundings from the DFG to set up the service",
+            "start_date": "2024-01-01",
+            "end_date": "2025-01-31"
+        }
+    ],
+    "service_operating_languages": [
+        "de - German",
+        "en - English"
+    ],
+    "nfdi4olab_pid": "DBM-test-PID",
+    "nfdi4olab_pref_label": "Compositional analysis of archaeological copper alloys ",
+    "nfdi4olab_scope_note": "This service provides the investigation of chemical composition of ancient copper alloys, both main and trace elements",
+    "service_readiness_level": "4 - Concept validated in controlled environment",
+    "offered_to": "EU",
+    "service_application_required": true,
+    "service_methods": "Please refer to the landing page",
+    "service_version": "1.0",
+    "service_version_date": "2024-01-01",
+    "service_creation_date": "2023-12-01",
+    "service_output": "please refer to the landing page",
+    "service_input": "please refer to the landing page",
+    "service_access_unit_cost": 100,
+    "service_hours_per_unit": 6,
+    "checked_date": "2024-01-01",
+    "service_active": true
+}
