@@ -1,0 +1,85 @@
+{
+    "section": [
+        {
+            "section_reference": [
+                {
+                    "reference role": [
+                        "published examples"
+                    ],
+                    "reference": "Hsu et al. 2024",
+                    "url": "doi/12324"
+                }
+            ],
+            "section_type": [
+                "Initial setup for the instrument"
+            ],
+            "section_title": "Introduction",
+            "section_illustration": "some image files",
+            "section_detail": "The section introduces what a pXRF analysis is. "
+        },
+        {
+            "section_reference": [
+                {
+                    "reference role": [
+                        "published examples"
+                    ],
+                    "reference": "Hst et al. 2024",
+                    "url": "doi/123"
+                }
+            ],
+            "section_type": [
+                "pXRF analytical processes"
+            ],
+            "section_title": "Implementation",
+            "section_detail": "This section details the procedures for a pXRF analysis",
+            "section_illustration": "some images"
+        },
+        {
+            "section_reference": [
+                {
+                    "reference role": [
+                        "published examples"
+                    ],
+                    "reference": "Hsu et al. 2024",
+                    "url": "doi/123"
+                }
+            ],
+            "section_type": [
+                "Report of pXRF outcomes"
+            ],
+            "section_title": "Intepretation of pXRF results",
+            "section_detail": "This sections explain how to intepret pxrf results",
+            "section_illustration": "some plots"
+        }
+    ],
+    "reference": [
+        {
+            "reference role": [
+                "published examples"
+            ],
+            "reference": "Hsu et al. 2024",
+            "url": "doi-jon/123322"
+        }
+    ],
+    "document_type": [
+        "method statement"
+    ],
+    "participants": [
+        {
+            "roles": [
+                "Author"
+            ],
+            "orcid": "Garyhsu123"
+        },
+        {
+            "roles": [
+                "Editor"
+            ],
+            "orcid": "Jan234"
+        }
+    ],
+    "nfdi4olab_pid": "DBM-test-PID",
+    "document_title": "Experimental Protocol for pXRF",
+    "creation_date": "2024-01-01",
+    "last_updated": "2024-01-04"
+}
