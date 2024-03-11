@@ -1,0 +1,1053 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://e-rihs.io/schema/method-v1.0.schema.json",
+  "title": "Standard Method for inductively coupled plasma mass spectrometry",
+  "description": "The schema outlines the required metadata to define a standard method or protocol for the ICP-MS analysis",
+  "type": "object",
+  "properties": {
+    "e-rihs_pid": {
+      "type": "string",
+      "title": "E-RIHS Service PID",
+      "description": "Please link to the E-RIHS Service ID",
+      "$id": "https://github.com/E-RIHS"
+    },
+    "prefered_label": {
+      "type": "string",
+      "title": "Preferred label",
+      "description": "Preferred label",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "alternative_labels": {
+      "title": "Alternative Lables or Names",
+      "description": "Any alternative names or labels for the method. This could be an acronym or a full text name if an acronym is used as the",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "type": "array"
+    },
+    "method_type": {
+      "type": "string",
+      "title": "Method Type",
+      "description": "The type of method this represents",
+      "enum": [
+        "Analysis Method",
+        "Technical Examination",
+        "Research Approach"
+      ]
+    },
+    "technique": {
+      "title": "Relevant Technique",
+      "description": "The general technique that this method is an application of",
+      "type": "string"
+    },
+    "method_version": {
+      "type": "string",
+      "title": "Version",
+      "description": "The version identifier for this method"
+    },
+    "creation_date": {
+      "title": "Creation Date",
+      "description": "The date this method was created",
+      "type": "string"
+    },
+    "author": {
+      "title": "Author",
+      "description": "A relevant person ID, either a local database ID or an ORCID for the creator or author of this method",
+      "type": "string"
+    },
+    "method_documentation": {
+      "title": "Method Documentation",
+      "description": "The document that describes the method used in the analysis",
+      "$id": "https://e-rihs.io/schema/document-v0.3.schema.json",
+      "type": "string",
+      "contentEncoding": "base64"
+    },
+    "related_tools": {
+      "title": "Related Tools",
+      "description": "The key related tools (Equipment or Software) described associated with this method",
+      "items": {
+        "title": "Tool",
+        "type": "object",
+        "properties": {
+          "tool_pid": {
+            "title": "Tool PID",
+            "type": "string"
+          },
+          "tool_role": {
+            "title": "Tool Role",
+            "type": "string",
+            "enum": [
+              "Main Equipment",
+              "Detector",
+              "Data Processor",
+              "Peak Detector"
+            ]
+          }
+        }
+      },
+      "type": "array"
+    },
+    "SolutionMetadata": {
+      "title": "Solution Metadata",
+      "description": "Metadata of solution introduction",
+      "properties": {
+        "solutionIntro": {
+          "type": "string",
+          "title": "solution introduction system",
+          "description": "Solution introduction system brand and model (e.g. Teledyne Cetac Aridus II)"
+        },
+        "sampleUptake": {
+          "type": "number",
+          "title": "sample uptake rate [μl/min]",
+          "description": "Uptake flow rate of solution (μl/min) "
+        },
+        "nebuliserGasFlow": {
+          "title": "nebulizer gas flow rate [l/min]",
+          "description": "nebulizer gas flow rate (l/min)",
+          "type": "number"
+        },
+        "peltierTemp": {
+          "type": "number",
+          "title": "peltier temperature [°C]",
+          "description": "Temperature in degree Celsius of peliter element for cyclonic spray chamber when in wet plasma mode"
+        },
+        "sweepGasFlow": {
+          "type": "number",
+          "title": "sweep gas flow rate [l/min]",
+          "description": "Sweep gas flow rate for desolvating nebuliser systems (l/min)"
+        },
+        "additionalGasType": {
+          "type": "string",
+          "title": "type of additional gas",
+          "description": "Type of additional carrier gas (e.g. N2, H) for desolvating nebulizer systems"
+        },
+        "additionalGasFlow": {
+          "title": "additional gas flow rate [l/min]",
+          "description": "Additional carrier gas flow rate for desolvating nebulizer systems",
+          "type": "number"
+        },
+        "nabh4Con": {
+          "type": "number",
+          "title": "NaBH4 concentration [%]",
+          "description": "NaBH4 concentration (% (w/v)) for hydride generator only"
+        },
+        "nabh4Uptake": {
+          "type": "number",
+          "title": "Uptake rate of NaBH4 [ml/min]",
+          "description": "NaBH4 uptake rate (ml/min) for hydride generator only"
+        },
+        "hclCon": {
+          "type": "number",
+          "title": "HCL concentration [M]",
+          "description": "HCL concentration (M) for hydride generator only"
+        },
+        "hclUptake": {
+          "type": "number",
+          "title": "Uptake Rate of HCL [ml/min]",
+          "description": "HCL uptake rate (ml/min) for hydride generator"
+        },
+        "hyGenGas": {
+          "type": "string",
+          "title": "carrier gas for hydride generator",
+          "description": "Hydride generator carrier gas (e.g. argon, helium) "
+        },
+        "solidSampleWeight": {
+          "type": "number",
+          "title": "solid sample weight [mg]",
+          "description": "Sample weight (mg) for the electrothermal vaporization (ETV)"
+        },
+        "solutionSampleVolume": {
+          "type": "number",
+          "title": "volume of sample solution [μl]",
+          "description": " Sample solution volume (μl) for the electrothermal vaporization (ETV)"
+        },
+        "chemModifier": {
+          "title": "chemical modifier",
+          "description": "Chemical modifier used and weight (μg) or volume (μl) for ETV (e.g. ascorbic acid 300μg + Pd 1μg) ",
+          "type": "string"
+        },
+        "etvTempStep": {
+          "type": "string",
+          "title": "ETV temperature programe step",
+          "description": "ETV temperature programe steps. For instance, 1 - Dry : 110°C, 10s (ramp), 15s (hold). 2- Pyolisis 1100°C, 10s (ramp), 45s (hold), 3 - Vaporisation 2600°C, 0.5s (ramp), 1s (hold)"
+        },
+        "etvGas": {
+          "type": "string",
+          "title": "ETV carrier gas",
+          "description": "ETV carrier gas (e.g. argon, helium)"
+        },
+        "etvGasFlow": {
+          "type": "number",
+          "title": "ETV carrier gas flow [l/min]",
+          "description": "ETV carrier gas flow (I/min) transporting analyte from furnace to ICP torch (e.g. 0.7 I/min)"
+        },
+        "tubeLength": {
+          "type": "number",
+          "title": "Length of tubing [cm]",
+          "description": "Length of the interfance/transport tubing (cm)"
+        },
+        "acqDuration": {
+          "title": "duration of singal acquisition [s]",
+          "description": "Duration of singal acquisition on solution in seconds",
+          "type": "integer"
+        },
+        "washTime": {
+          "type": "integer",
+          "title": "washing time [s]",
+          "description": "Duration of washing time between solutions in seconds"
+        },
+        "analySeq": {
+          "title": "analytical sequence",
+          "description": "Description of the analytical sequence/run. For instance, sequence is composed of 2 procedurial blanks, 11 unknown, 2 BCR-2, backeted by 2 duplicates of BHVO-2 ran as calibration solution",
+          "type": "string"
+        },
+        "calStrategy": {
+          "type": "string",
+          "title": "calibration strategy",
+          "description": "Strategy used for calibration on the instrument and quantification (e.g. external calibration; single internal standard addition; multiple internal standard addition; enriched isotopes addition...etc)"
+        },
+        "calReferenceMaterial": {
+          "type": "string",
+          "title": "calibrating reference material/solution",
+          "description": "Calibrating solution used e.g. BHVO-2; custom made solution using (e.g. selenium [25 ppb]+tellurium [20 ppb] + arsenic [20 ppb]) "
+        },
+        "internalStandard": {
+          "type": "string",
+          "title": "internal standard",
+          "description": "List of natural or enriched isotopes used/added for internal standardisation (e.g. 6Li, 84Sr, 115In, 147Sm, 209Bi, 235U) "
+        },
+        "dilutionFactor": {
+          "type": "integer",
+          "title": "dilution factor",
+          "description": "Dilution factors used e.g. BHVO-2 dilution factor 6000; blanks dilution factor 1000; sample dilution factor 4000"
+        },
+        "tubingMaterial": {
+          "type": "string",
+          "title": "tubing material",
+          "description": "Type of tubing"
+        },
+        "tubingMaterialDiameter": {
+          "title": "diameter of tubing material [mm]",
+          "description": "Diameter of tubing material in millimeter",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "laserMetadata": {
+      "type": "object",
+      "title": "Laser Metadata",
+      "description": "Configuration of laser for the ICP-MS analysis",
+      "properties": {
+        "laserSystem": {
+          "type": "string",
+          "title": "laser system",
+          "description": "",
+          "enum": [
+            "Applied Spectra J200 Femto iX",
+            "Applied Spectra J200 Femtosecond",
+            "Applied Spectra J200",
+            "Applied Spectra RESolution-SE",
+            "Applied Spectra RESolution-LR",
+            "Teledyne-Cetac Excite Pharos",
+            "Teledyne-Cetac LSX-213 G2+",
+            "Teledyne-Cetac Iridia",
+            "Teledyne-Cetac Analyte 198 Femtosecond",
+            "Teledyne-Cetac Analyte G2",
+            "Teledyne-Cetac Analyte HE",
+            "Teledyne-Cetac Analyte Excite +",
+            "Teledyne-Cetac Analyte Excite",
+            "New Wave Research NWR193HE",
+            "New Wave Research LaserTRAX",
+            "New Wave Research NWR213",
+            "New Wave Research UP266",
+            "New Wave Research UP213",
+            "New Wave Research UP193",
+            "Other"
+          ]
+        },
+        "laserWavelength": {
+          "type": "integer",
+          "title": "laser wavelength [nm]",
+          "description": ""
+        },
+        "pulseWidthValue": {
+          "title": "pulse width",
+          "description": "Pulse width of laser in picosecond, femtosecond, or nanosecond",
+          "type": "number"
+        },
+        "laserPulseWidthUnit": {
+          "type": "string",
+          "title": "laser pulse width unit",
+          "description": "",
+          "enum": [
+            "picosecond",
+            "femtosecond",
+            "nanosecond"
+          ]
+        },
+        "laserSamplingMode": {
+          "type": "string",
+          "title": "laser sampling mode",
+          "description": "",
+          "enum": [
+            "single pulse",
+            "raster",
+            "static spot"
+          ]
+        },
+        "laserFluence": {
+          "type": "number",
+          "title": "laser fluence [J/cm2]",
+          "description": "laserFluence in joules per square centimeter"
+        },
+        "laserRepetition": {
+          "type": "number",
+          "title": "laser repetition [Hz]",
+          "description": "Laser repetition rate (Hz)"
+        },
+        "laserSpotSize": {
+          "type": "number",
+          "title": "Laser spot size [μm]",
+          "description": "The spot size of laser (μm)"
+        },
+        "cellModel": {
+          "type": "string",
+          "title": "cell model",
+          "description": "Brand and model of ablation cell"
+        },
+        "ablationGas": {
+          "type": "string",
+          "title": "ablation gas",
+          "description": "Type of main ablation/carrier gas (e.g. He, Ar) "
+        },
+        "ablationGasFlow": {
+          "type": "number",
+          "title": "ablation gas flow rate [l/min]",
+          "description": "Flow rate of main ablation/carrier gas (I/min)"
+        },
+        "mixingDevice": {
+          "type": "string",
+          "title": "mixing device",
+          "description": "Mixing/smoothing device used to homogenize/smooth the signal (e.g. Y connector, Bulb, Squid, Coil) "
+        },
+        "gasBlankDuration": {
+          "type": "integer",
+          "title": "Duration of gas blank [s]",
+          "description": "Duration of gas blank/instrument background measurement in second"
+        },
+        "ablationDuration": {
+          "type": "integer",
+          "title": "ablation duration [s]",
+          "description": "Duration of laser ablation in second"
+        },
+        "additionalGas": {
+          "type": "string",
+          "title": "additional gas",
+          "description": "Type of additional carrier gas (e.g. N2, H)"
+        },
+        "additionalGasFlow": {
+          "type": "number",
+          "title": "additional gas flow [ml/min]",
+          "description": "Flow of additional gas"
+        },
+        "washTime": {
+          "type": "integer",
+          "title": "wash time [s]",
+          "description": "Duration of washing time between solutions in second"
+        },
+        "tubingLength": {
+          "type": "number",
+          "title": "tubing length [cm]",
+          "description": "Length of inteface/transport tubing"
+        },
+        "LTubingMaterial": {
+          "type": "string",
+          "title": "laser tubing material",
+          "description": ""
+        },
+        "LTubingMaterialDiameter": {
+          "type": "number",
+          "title": "laser tubing internal diameter [cm]",
+          "description": ""
+        },
+        "analyticalSequence": {
+          "type": "string",
+          "title": "analytical sequence",
+          "description": "Description of the analytical sequence/run. For instance, sequence is composed of 2 procedurial blanks, 11 unknown, 2 BCR-2, backeted by 2 duplicates of BHVO-2 ran as calibration solution"
+        },
+        "calStrategy": {
+          "type": "string",
+          "title": "calibration strategy",
+          "description": "Strategy used for calibration on the instrument and quantification (e.g. external calibration; single internal standard addition; multiple internal standard addition; enriched isotopes addition...etc)"
+        },
+        "purposeReference1": {
+          "type": "string",
+          "title": "purpose of calibrating reference material #1",
+          "description": "Purpose of calibrating reference material (e.g. U-Pb, trace elements, PGEs, specific set of TE)"
+        },
+        "purposeReference2": {
+          "type": "string",
+          "title": "purpose of calibrating reference material #2",
+          "description": "Purpose of calibrating reference material (e.g. U-Pb, trace elements, PGEs, specific set of TE)"
+        },
+        "purposeReference3": {
+          "type": "string",
+          "title": "purpose of calibrating reference material #3",
+          "description": "Purpose of calibrating reference material (e.g. U-Pb, trace elements, PGEs, specific set of TE)"
+        },
+        "referenceMaterial1": {
+          "type": "string",
+          "title": "reference material #1",
+          "description": ""
+        },
+        "referenceMaterial2": {
+          "type": "string",
+          "title": "reference material #2",
+          "description": ""
+        },
+        "referenceMaterial3": {
+          "type": "string",
+          "title": "reference material #3",
+          "description": ""
+        },
+        "LInternalStandard1": {
+          "type": "string",
+          "title": "laser internal standard #1",
+          "description": ""
+        },
+        "LInternalStandard2": {
+          "title": "laser internal standard #2",
+          "description": "",
+          "type": "string"
+        },
+        "LInternalStandard3": {
+          "type": "string",
+          "title": "laser internal standard #3",
+          "description": ""
+        }
+      }
+    },
+    "QICPMSMetadata": {
+      "type": "object",
+      "title": "Q-ICP-MS Metadata",
+      "description": "",
+      "properties": {
+        "QSampleIntro": {
+          "type": "string",
+          "title": "sample introduction details",
+          "description": "Details of sample introduction system (e.g. laser ablation; solution; ablation aersol combined with coaspiration of desolvated Tl-235U tracer using a DSN-100 desovating nebulizer"
+        },
+        "rfPower": {
+          "type": "number",
+          "title": "RF power [W]",
+          "description": "Radio frequency power (W) applied to coil to generate plasma (typically 1000-1500 W)"
+        },
+        "rfMatching": {
+          "type": "number",
+          "title": "RF frequency matching [V]",
+          "description": "RF matching compensates for changes in impedance (a material's resistance to the flow of an electric current) produced by the sample's matrix components or differences in solvent volatility"
+        },
+        "sampleDepth": {
+          "type": "number",
+          "title": "sample depth [mm]",
+          "description": "Distance in mm between coil and sampling cone"
+        },
+        "nebulizerGasFlow": {
+          "type": "number",
+          "title": "nebulizer gas flow [l/min]",
+          "description": "nebulizer gas flow"
+        },
+        "makeUpGasFLow": {
+          "type": "number",
+          "title": "make-up gas flow [l/min]",
+          "description": "Make-up gas flow"
+        },
+        "samplerCone": {
+          "title": "sampler cone details",
+          "description": "Sampler cone details, such as material (e.g. nickel, platinum, aluminium), geometry (e.g. standard, jet), orifice dimension (internal diamter from 0.8 to 1.2 mm) ",
+          "type": "object",
+          "properties": {
+            "samplerMaterial": {
+              "title": "sampler material",
+              "description": "Material that the sampler cone is made of ",
+              "type": "string"
+            },
+            "samplerGeometry": {
+              "type": "string",
+              "title": "sampler geometry",
+              "description": "Geometry of sampler cone"
+            },
+            "samplerDiameter": {
+              "type": "number",
+              "title": "sampler cone diameter [mm]",
+              "description": "Internal diameter of sampler cone"
+            }
+          }
+        },
+        "skimmerCone": {
+          "type": "object",
+          "title": "skimmer cone details",
+          "description": "Skimmer cone details, such as material (e.g. nickel, platinum, aluminium), geometry (e.g. H, X), orfice dimension (internal diameter from 0.4 to 0.8 mm) ",
+          "properties": {
+            "skimmerMaterial": {
+              "type": "string",
+              "title": "skimmer cone material",
+              "description": "Material that skimmer cone is made of"
+            },
+            "skimmerGeometry": {
+              "type": "string",
+              "title": "skimmer cone geometry",
+              "description": "Geometry of skimmer cone"
+            },
+            "skimmerDiameter": {
+              "type": "number",
+              "title": "skimmer cone diameter [mm]",
+              "description": "Diameter of skimmer cone"
+            }
+          }
+        },
+        "collisionCellGas": {
+          "type": "string",
+          "title": "collision cell gas",
+          "description": "Type of gas used in the collision cell (e.g. He)"
+        },
+        "collisionGasFlow": {
+          "type": "number",
+          "title": "collision cell gas flow [ml/min]",
+          "description": "collision cell gas flow"
+        },
+        "detectionSystem": {
+          "type": "string",
+          "title": "detection system",
+          "description": "Type of detector used (e.g. electron multiplier; mixed Faraday-multiple ion counting array]"
+        },
+        "massesMeasured": {
+          "type": "string",
+          "title": "masses measured",
+          "description": "Masses measured (e.g. 202-207, 235, 238)"
+        },
+        "dwellTime": {
+          "type": "integer",
+          "title": "dwell times [ms]",
+          "description": "Counting time on each mass (e.g. 200 ms for each isotope; 200 ms on mass X and 100 ms on mass Y"
+        },
+        "oxideMonitor": {
+          "type": "string",
+          "title": "oxide monitor",
+          "description": "Mass-ratio monitored to estimate oxide formation (e.g. 248ThO+/232Th+156CeO+/140Ce+) "
+        },
+        "oxideProduction": {
+          "title": "oxide production [%]",
+          "description": "Percentage of oxide formation (typically preferred to be below > 1%)",
+          "type": "number"
+        },
+        "doublySpeciesMonitor": {
+          "type": "string",
+          "title": "doubly-charged species monitor",
+          "description": "Mass-ratio monitored to estimate doubly-charged species formation (e.g. 22Ca++/44Ca+; 70Ce++/140Ce+)"
+        },
+        "doublyChargedProduction": {
+          "type": "number",
+          "title": "doubly-charged species production [%]",
+          "description": "Percentage of doubly-charged species formation (typically preferred to be below > 1.5%)"
+        },
+        "QICPMSComment": {
+          "type": "string",
+          "title": "Comments",
+          "description": "Additional information about Q-ICP-MS analytical methods"
+        },
+        "ICPMSModel": {
+          "title": "ICP-MS model",
+          "description": "Model of ICP-MS",
+          "type": "string",
+          "enum": [
+            "Perkin Elmer (Q-ICP-MS)",
+            "Shimadzu (Q-ICP-MS)",
+            "Nu Plasma III (MC-ICP-MS)",
+            "Nu Plasma II (MC-ICP-MS)",
+            "Nu Plasma I (MC-ICP-MS)",
+            "Nu Attom (SF-ICP-MS)",
+            "Thermo Fisher Scientific Neptune Plus (MC-ICP-MS)",
+            "Thermo Fisher Scientific Neptune (MC-ICP-MS)",
+            "Thermo Fisher Scientific iCAP (ICP-MS/MS)",
+            "Thermo Fisher Scientific Element HR (SF-ICP-MS)",
+            "Agilent 8900 (ICP-MS/MS)",
+            "Agilent 8800 (ICP-MS/MS)",
+            "Agilent 7700 (Q-ICP-MS)",
+            "Agilent 7500 (Q-ICP-MS)"
+          ]
+        }
+      }
+    },
+    "MCICPMSMetadata": {
+      "type": "object",
+      "title": "MC-ICP-MS metadata",
+      "description": "",
+      "properties": {
+        "MCSampleIntro": {
+          "type": "string",
+          "title": "sample introduction details",
+          "description": "Details of sample introduction system (e.g. laser ablation; solution; ablation aersol combined with coaspiration of desolvated Tl-235U tracer using a DSN-100 desovating nebulizer"
+        },
+        "rfPower": {
+          "type": "number",
+          "title": "RF power [W]",
+          "description": "Radio frequency power (W) applied to coil to generate plasma (typically 1000-1500 W)"
+        },
+        "samplerCone": {
+          "title": "sampler cone details",
+          "description": "Sampler cone details, such as material (e.g. nickel, platinum, aluminium), geometry (e.g. standard, jet), orifice dimension (internal diamter from 0.8 to 1.2 mm) ",
+          "type": "object",
+          "properties": {
+            "samplerMaterial": {
+              "title": "sampler material",
+              "description": "Material that the sampler cone is made of ",
+              "type": "string"
+            },
+            "samplerGeometry": {
+              "type": "string",
+              "title": "sampler geometry",
+              "description": "Geometry of sampler cone"
+            },
+            "samplerDiameter": {
+              "type": "number",
+              "title": "sampler cone diameter [mm]",
+              "description": "Internal diameter of sampler cone"
+            }
+          }
+        },
+        "skimmerCone": {
+          "type": "object",
+          "title": "skimmer cone details",
+          "description": "Skimmer cone details, such as material (e.g. nickel, platinum, aluminium), geometry (e.g. H, X), orfice dimension (internal diameter from 0.4 to 0.8 mm) ",
+          "properties": {
+            "skimmerMaterial": {
+              "type": "string",
+              "title": "skimmer cone material",
+              "description": "Material that skimmer cone is made of"
+            },
+            "skimmerGeometry": {
+              "type": "string",
+              "title": "skimmer cone geometry",
+              "description": "Geometry of skimmer cone"
+            },
+            "skimmerDiameter": {
+              "type": "number",
+              "title": "skimmer cone diameter [mm]",
+              "description": "Diameter of skimmer cone"
+            }
+          }
+        },
+        "detectionSystem": {
+          "type": "string",
+          "title": "detection system",
+          "description": "Type of detector used (e.g. electron multiplier; mixed Faraday-multiple ion counting array]"
+        },
+        "resolutionMode": {
+          "type": "string",
+          "title": "resolution mode",
+          "description": "Resolution mode used (e.g. low resolution, pseudo high resolution or high resolution). Pesudo and high resolution modes are commonly used to resolve interfering isobaric peaks"
+        },
+        "magnetDelay": {
+          "type": "integer",
+          "title": "magnet delay [s]",
+          "description": "Time delay in seconds applied after each time a magnet switch occurs (usually 2 seconds) "
+        },
+        "massesMeasured": {
+          "type": "string",
+          "title": "masses measured",
+          "description": "Masses measured (e.g. 202-207, 235, 238). If not a static mode and multiple \"magnet\" cycles are implemented, do precise the number of cycles and masses measured in each cycle (e.g. cycle #1: 202, 204, 206, 207, 208; cycle #2: 232, 234, 235, 238)"
+        },
+        "integrationTimes": {
+          "type": "integer",
+          "title": "integration times [s]",
+          "description": "Beam counting time for each measurement in seconds (e.g. 10 s) "
+        },
+        "zeroInteTime": {
+          "type": "integer",
+          "title": "zero integration time [s]",
+          "description": "Background counting time for each zero measurement in seconds (e.g. 60 s)"
+        },
+        "peakCenterMass": {
+          "type": "string",
+          "title": "peak cenetering mass",
+          "description": "Mass used to position the center of the peaks (e.g. 180) "
+        },
+        "deltaM": {
+          "type": "string",
+          "title": "delta M [amu]",
+          "description": "HR mode only. Delta M in a.m.u. When resolving isobaric interferences in high resolution mode, a precise and constant mass offset (delta M) can be applied to the main body of a peak in order to locate lower interference-free peak edges. Main peak (interfered) is identified by instrument and Delta M is added or removed from it, allowing magnet to be centered on the interference-free edge of an isotope of choice during analysis (e.g. 57Fe overlapped by 17O + 40Ar: main body of peak is 17O + 40Ar at 56.978 and 57Fe shoulder is located at 56.966 and therefore a Delta M of 0.0126 a.m.u.)"
+        },
+        "numberBlock": {
+          "type": "integer",
+          "title": "number of block",
+          "description": "Solution mode only.Number of blocks of measurements (e.g. 2)"
+        },
+        "numberMeasureBlock": {
+          "type": "integer",
+          "title": "number of measurements per block",
+          "description": "Number of measurement per block (e.g. 25; 2 blocks and 25 measurements per block give 50 measurements per analysis) "
+        },
+        "MCICPMSComment": {
+          "type": "string",
+          "title": "Comments",
+          "description": "Additional information about MC-ICP-MS analytical methods"
+        },
+        "ICPMSModel": {
+          "title": "ICP-MS model",
+          "description": "Model of ICP-MS",
+          "type": "string",
+          "enum": [
+            "Perkin Elmer (Q-ICP-MS)",
+            "Shimadzu (Q-ICP-MS)",
+            "Nu Plasma III (MC-ICP-MS)",
+            "Nu Plasma II (MC-ICP-MS)",
+            "Nu Plasma I (MC-ICP-MS)",
+            "Nu Attom (SF-ICP-MS)",
+            "Thermo Fisher Scientific Neptune Plus (MC-ICP-MS)",
+            "Thermo Fisher Scientific Neptune (MC-ICP-MS)",
+            "Thermo Fisher Scientific iCAP (ICP-MS/MS)",
+            "Thermo Fisher Scientific Element HR (SF-ICP-MS)",
+            "Agilent 8900 (ICP-MS/MS)",
+            "Agilent 8800 (ICP-MS/MS)",
+            "Agilent 7700 (Q-ICP-MS)",
+            "Agilent 7500 (Q-ICP-MS)"
+          ]
+        }
+      }
+    },
+    "ICPMSMSMetadata": {
+      "type": "object",
+      "title": "ICP-MS-MS metadata",
+      "description": "",
+      "properties": {
+        "MSMSSampleIntro": {
+          "type": "string",
+          "title": "sample introduction details",
+          "description": "Details of sample introduction system (e.g. laser ablation; solution; ablation aersol combined with coaspiration of desolvated Tl-235U tracer using a DSN-100 desovating nebulizer"
+        },
+        "rfPower": {
+          "type": "number",
+          "title": "RF power [W]",
+          "description": "Radio frequency power (W) applied to coil to generate plasma (typically 1000-1500 W)"
+        },
+        "rfMatching": {
+          "type": "number",
+          "title": "RF frequency matching [V]",
+          "description": "RF matching compensates for changes in impedance (a material's resistance to the flow of an electric current) produced by the sample's matrix components or differences in solvent volatility"
+        },
+        "sampleDepth": {
+          "type": "number",
+          "title": "sample depth [mm]",
+          "description": "Distance in mm between coil and sampling cone"
+        },
+        "nebulizerGasFlow": {
+          "type": "number",
+          "title": "nebulizer gas flow [l/min]",
+          "description": "nebulizer gas flow"
+        },
+        "makeUpGasFLow": {
+          "type": "number",
+          "title": "make-up gas flow [l/min]",
+          "description": "Make-up gas flow"
+        },
+        "samplerCone": {
+          "title": "sampler cone details",
+          "description": "Sampler cone details, such as material (e.g. nickel, platinum, aluminium), geometry (e.g. standard, jet), orifice dimension (internal diamter from 0.8 to 1.2 mm) ",
+          "type": "object",
+          "properties": {
+            "samplerMaterial": {
+              "title": "sampler material",
+              "description": "Material that the sampler cone is made of ",
+              "type": "string"
+            },
+            "samplerGeometry": {
+              "type": "string",
+              "title": "sampler geometry",
+              "description": "Geometry of sampler cone"
+            },
+            "samplerDiameter": {
+              "type": "number",
+              "title": "sampler cone diameter [mm]",
+              "description": "Internal diameter of sampler cone"
+            }
+          }
+        },
+        "skimmerCone": {
+          "type": "object",
+          "title": "skimmer cone details",
+          "description": "Skimmer cone details, such as material (e.g. nickel, platinum, aluminium), geometry (e.g. H, X), orfice dimension (internal diameter from 0.4 to 0.8 mm) ",
+          "properties": {
+            "skimmerMaterial": {
+              "type": "string",
+              "title": "skimmer cone material",
+              "description": "Material that skimmer cone is made of"
+            },
+            "skimmerGeometry": {
+              "type": "string",
+              "title": "skimmer cone geometry",
+              "description": "Geometry of skimmer cone"
+            },
+            "skimmerDiameter": {
+              "type": "number",
+              "title": "skimmer cone diameter [mm]",
+              "description": "Diameter of skimmer cone"
+            }
+          }
+        },
+        "Q1TargetMass": {
+          "type": "string",
+          "title": "Q1 target masses (1st mass filter)",
+          "description": "Masses scanned by the first quadrupole (Q2 filter) e.g. 46Ti, 47Ti, 48Ti, 49TI, 50Ti "
+        },
+        "MSMSMode": {
+          "title": "MS/MS mode",
+          "description": "On-Mass mode vs mass-shift mode. MS/MS strategy: On-mass mode (Q1 and Q2 are both set to the same target masses; interfering ions are either filtered by collision or by mass-shifted by reaction; or instrument is used in \"single quad mode\" with no gas in the cell) or Mass-shift mode (Q1 and Q2 are set to different target masses; analyte ions are mass-shifted by reaction and Q2 is set to the masses of reaction products) ",
+          "type": "string",
+          "enum": [
+            "On-Mass Mode",
+            "Mass-Shift Mode"
+          ]
+        },
+        "collisionCellGas": {
+          "type": "string",
+          "title": "collision/reaction cell gas",
+          "description": "Type of gas used in the MS/MS collision/reaction cell (e.g. NH3, N2O, CH4, No Gas)"
+        },
+        "collisionGasPurity": {
+          "type": "string",
+          "title": "collision/reaction cell gas purity",
+          "description": "Purity of the gas used in the MS/MS collision reaction cell (e.g. high purity; ultra high purity) "
+        },
+        "CollisionGasFlow": {
+          "type": "number",
+          "title": "collision/reaction cell gas flow [ml/min]",
+          "description": "Collision/reaction cell gas flow (ml per min); can also be expressed in sccm (standard cubic centimeter per minute), 1 sccm = 1 ml/min "
+        },
+        "waitTimeOffset": {
+          "type": "integer",
+          "title": "wait time offset [ms]",
+          "description": "The wait time offset is a delay in ms (e.g. 2 ms) implemented to slightly dephased the scanning of Q2 relative to Q1 in order to compensate for the slowdown of the ions in the cell due to the collision/reaction process"
+        },
+        "detectionSystem": {
+          "type": "string",
+          "title": "detection system",
+          "description": "Type of detector used (e.g. electron multiplier; mixed Faraday-multiple ion counting array]"
+        },
+        "massesAfterQ2": {
+          "type": "string",
+          "title": "masses measured after Q2",
+          "description": "Masses measured after the second quadrupole (Q2) e.g. 62 (46Ti16O), 63 (47Ti16O), 64 (48Ti16O), 65 (49Ti16O), 66 (50Ti16O) (if O mass-shifted)"
+        },
+        "dwellTime": {
+          "type": "integer",
+          "title": "dwell times [ms]",
+          "description": "Counting time on each mass (e.g. 200 ms for each isotope; 200 ms on mass X and 100 ms on mass Y"
+        },
+        "oxideMonitor": {
+          "type": "string",
+          "title": "oxide monitor",
+          "description": "Mass-ratio monitored to estimate oxide formation (e.g. 248ThO+/232Th+156CeO+/140Ce+) "
+        },
+        "oxideProduction": {
+          "title": "oxide production [%]",
+          "description": "Percentage of oxide formation (typically preferred to be below > 1%)",
+          "type": "number"
+        },
+        "doublySpeciesMonitor": {
+          "type": "string",
+          "title": "doubly-charged species monitor",
+          "description": "Mass-ratio monitored to estimate doubly-charged species formation (e.g. 22Ca++/44Ca+; 70Ce++/140Ce+)"
+        },
+        "doublyChargedProduction": {
+          "type": "number",
+          "title": "doubly-charged species production [%]",
+          "description": "Percentage of doubly-charged species formation (typically preferred to be below > 1.5%)"
+        },
+        "ICPMSMSComment": {
+          "type": "string",
+          "title": "Comments",
+          "description": "Additional information about ICP-MS-MS analytical methods"
+        },
+        "ICPMSModel": {
+          "title": "ICP-MS model",
+          "description": "Model of ICP-MS",
+          "type": "string",
+          "enum": [
+            "Perkin Elmer (Q-ICP-MS)",
+            "Shimadzu (Q-ICP-MS)",
+            "Nu Plasma III (MC-ICP-MS)",
+            "Nu Plasma II (MC-ICP-MS)",
+            "Nu Plasma I (MC-ICP-MS)",
+            "Nu Attom (SF-ICP-MS)",
+            "Thermo Fisher Scientific Neptune Plus (MC-ICP-MS)",
+            "Thermo Fisher Scientific Neptune (MC-ICP-MS)",
+            "Thermo Fisher Scientific iCAP (ICP-MS/MS)",
+            "Thermo Fisher Scientific Element HR (SF-ICP-MS)",
+            "Agilent 8900 (ICP-MS/MS)",
+            "Agilent 8800 (ICP-MS/MS)",
+            "Agilent 7700 (Q-ICP-MS)",
+            "Agilent 7500 (Q-ICP-MS)"
+          ]
+        }
+      }
+    },
+    "HRICPMSMetadata": {
+      "type": "object",
+      "title": "HR-ICP-MS metadata",
+      "description": "",
+      "properties": {
+        "MSMSSampleIntro": {
+          "type": "string",
+          "title": "sample introduction details",
+          "description": "Details of sample introduction system (e.g. laser ablation; solution; ablation aersol combined with coaspiration of desolvated Tl-235U tracer using a DSN-100 desovating nebulizer"
+        },
+        "rfPower": {
+          "type": "number",
+          "title": "RF power [W]",
+          "description": "Radio frequency power (W) applied to coil to generate plasma (typically 1000-1500 W)"
+        },
+        "nebulizerGasFlow": {
+          "type": "number",
+          "title": "nebulizer gas flow [l/min]",
+          "description": "nebulizer gas flow"
+        },
+        "samplerCone": {
+          "title": "sampler cone details",
+          "description": "Sampler cone details, such as material (e.g. nickel, platinum, aluminium), geometry (e.g. standard, jet), orifice dimension (internal diamter from 0.8 to 1.2 mm) ",
+          "type": "object",
+          "properties": {
+            "samplerMaterial": {
+              "title": "sampler material",
+              "description": "Material that the sampler cone is made of ",
+              "type": "string"
+            },
+            "samplerGeometry": {
+              "type": "string",
+              "title": "sampler geometry",
+              "description": "Geometry of sampler cone"
+            },
+            "samplerDiameter": {
+              "type": "number",
+              "title": "sampler cone diameter [mm]",
+              "description": "Internal diameter of sampler cone"
+            }
+          }
+        },
+        "skimmerCone": {
+          "type": "object",
+          "title": "skimmer cone details",
+          "description": "Skimmer cone details, such as material (e.g. nickel, platinum, aluminium), geometry (e.g. H, X), orfice dimension (internal diameter from 0.4 to 0.8 mm) ",
+          "properties": {
+            "skimmerMaterial": {
+              "type": "string",
+              "title": "skimmer cone material",
+              "description": "Material that skimmer cone is made of"
+            },
+            "skimmerGeometry": {
+              "type": "string",
+              "title": "skimmer cone geometry",
+              "description": "Geometry of skimmer cone"
+            },
+            "skimmerDiameter": {
+              "type": "number",
+              "title": "skimmer cone diameter [mm]",
+              "description": "Diameter of skimmer cone"
+            }
+          }
+        },
+        "detectionSystem": {
+          "type": "string",
+          "title": "detection system",
+          "description": "Type of detector used (e.g. electron multiplier; mixed Faraday-multiple ion counting array]"
+        },
+        "resolutionMode": {
+          "title": "resolution mode",
+          "description": "Resolution mode used (e.g. low resolution, pseudo high resolution or high resolution; 300, 2000, 3000, 5000). Pesudo and high resolution modes are commonly used to resolve interfering isobaric peaks",
+          "type": "string"
+        },
+        "magnetDelay": {
+          "type": "integer",
+          "title": "magnet delay [s]",
+          "description": "Time delay in seconds applied after each time a magnet switch occurs (usually 2 seconds) "
+        },
+        "fastScan": {
+          "type": "boolean",
+          "title": "fast scan mode",
+          "description": "In FastScan mode the magnet is set to a static position and ion optics deflect the beam over a limited mass range in an extremely fast and reliable manner"
+        },
+        "scanWindow": {
+          "type": "number",
+          "title": "scan window [%]",
+          "description": "Width of the scanned and integrated window of a peak (e.g. 0 = peak top; 100% full peak width) "
+        },
+        "massesMeasured": {
+          "title": "masses measured",
+          "description": "Masses measured (e.g. 202-207, 235, 238)",
+          "type": "string"
+        },
+        "dwellTime": {
+          "type": "integer",
+          "title": "dwell times [ms]",
+          "description": "Counting time on each mass (e.g. 200 ms for each isotope; 200 ms on mass X and 100 ms on mass Y"
+        },
+        "zeroInteTime": {
+          "type": "integer",
+          "title": "zero integration time [s]",
+          "description": "Background counting time for each zero measurement in seconds (e.g. 60 s)"
+        },
+        "peakCenterMass": {
+          "type": "string",
+          "title": "peak cenetering mass",
+          "description": "Mass used to position the center of the peaks (e.g. 180) "
+        },
+        "numberSweep": {
+          "type": "integer",
+          "title": "number of sweep",
+          "description": "number of sweeps (e.g. 200). A sweep consists of 1 ramp up and 1 ramp down of the defined mass range, therefore 2 data sets"
+        },
+        "numberCycles": {
+          "type": "integer",
+          "title": "number of cycles",
+          "description": "Number of sweep cycles (e.g. 10). 10 cycles of 200 sweeps equals to 4000 data sets"
+        },
+        "HRICPMSComment": {
+          "type": "string",
+          "title": "Comments",
+          "description": "Additional information about HR-ICP-MS analytical methods"
+        },
+        "ICPMSModel": {
+          "title": "ICP-MS model",
+          "description": "Model of ICP-MS",
+          "type": "string",
+          "enum": [
+            "Perkin Elmer (Q-ICP-MS)",
+            "Shimadzu (Q-ICP-MS)",
+            "Nu Plasma III (MC-ICP-MS)",
+            "Nu Plasma II (MC-ICP-MS)",
+            "Nu Plasma I (MC-ICP-MS)",
+            "Nu Attom (SF-ICP-MS)",
+            "Thermo Fisher Scientific Neptune Plus (MC-ICP-MS)",
+            "Thermo Fisher Scientific Neptune (MC-ICP-MS)",
+            "Thermo Fisher Scientific iCAP (ICP-MS/MS)",
+            "Thermo Fisher Scientific Element HR (SF-ICP-MS)",
+            "Agilent 8900 (ICP-MS/MS)",
+            "Agilent 8800 (ICP-MS/MS)",
+            "Agilent 7700 (Q-ICP-MS)",
+            "Agilent 7500 (Q-ICP-MS)"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "e-rihs_pid",
+    "prefered_label",
+    "creation_date",
+    "author",
+    "technique"
+  ]
+}

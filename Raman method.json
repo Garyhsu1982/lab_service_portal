@@ -1,0 +1,338 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://e-rihs.io/schema/method-v1.0.schema.json",
+  "title": "Standard Method for Raman Spectroscopy",
+  "description": "The schema outlines the required metadata to define a standard method or protocol for the Raman analysis",
+  "type": "object",
+  "properties": {
+    "e-rihs_pid": {
+      "type": "string",
+      "title": "E-RIHS Service PID",
+      "description": "Please link to the E-RIHS Service ID",
+      "$id": "https://github.com/E-RIHS"
+    },
+    "prefered_label": {
+      "type": "string",
+      "title": "Preferred label",
+      "description": "Preferred label",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "alternative_labels": {
+      "title": "Alternative Lables or Names",
+      "description": "Any alternative names or labels for the method. This could be an acronym or a full text name if an acronym is used as the",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "type": "array"
+    },
+    "method_type": {
+      "type": "string",
+      "title": "Method Type",
+      "description": "The type of method this represents",
+      "enum": [
+        "Analysis Method",
+        "Technical Examination",
+        "Research Approach"
+      ]
+    },
+    "technique": {
+      "title": "Relevant Technique",
+      "description": "The general technique that this method is an application of",
+      "type": "string"
+    },
+    "method_version": {
+      "type": "string",
+      "title": "Version",
+      "description": "The version identifier for this method"
+    },
+    "creation_date": {
+      "title": "Creation Date",
+      "description": "The date this method was created",
+      "type": "string"
+    },
+    "author": {
+      "title": "Author",
+      "description": "A relevant person ID, either a local database ID or an ORCID for the creator or author of this method",
+      "type": "string"
+    },
+    "method_documentation": {
+      "title": "Method Documentation",
+      "description": "The document that describes the method used in the analysis",
+      "$id": "https://e-rihs.io/schema/document-v0.3.schema.json",
+      "type": "string",
+      "contentEncoding": "base64"
+    },
+    "related_tools": {
+      "title": "Related Tools",
+      "description": "The key related tools (Equipment or Software) described associated with this method",
+      "items": {
+        "title": "Tool",
+        "type": "object",
+        "properties": {
+          "tool_pid": {
+            "title": "Tool PID",
+            "type": "string"
+          },
+          "tool_role": {
+            "title": "Tool Role",
+            "type": "string",
+            "enum": [
+              "Main Equipment",
+              "Detector",
+              "Data Processor",
+              "Peak Detector"
+            ]
+          }
+        }
+      },
+      "type": "array"
+    },
+    "RamanConf": {
+      "title": "Raman Configuration",
+      "description": "This describes the parameters used to generate the outcomes",
+      "required": [
+        "power",
+        "accumulation",
+        "integration_time",
+        "resolution",
+        "wavelength",
+        "micro_objective"
+      ],
+      "properties": {
+        "wavelength": {
+          "title": "wavelength [nm]",
+          "description": "The wavelength of the  excitation laser in nanometers (nm)",
+          "type": "number"
+        },
+        "power": {
+          "type": "number",
+          "title": "power [mV]",
+          "description": "The power level of the excitation laser in milliwatts (mV)"
+        },
+        "spotsize": {
+          "type": "number",
+          "title": "spot size [μm]",
+          "description": "Laser spot diameter in micrometers (μm) as determined by laser wavelength and microscope objective"
+        },
+        "lasersource": {
+          "type": "string",
+          "title": "laser source",
+          "description": "The energy source of the excitation laser",
+          "enum": [
+            "argon-krypton",
+            "argon",
+            "kypton",
+            "helium-neon",
+            "xenon",
+            "nitrogen",
+            "excimer",
+            "helium-cadium",
+            "helium-mercury",
+            "helium-selenium",
+            "helium-silver",
+            "gold-vaper",
+            "manganese",
+            "ruby",
+            "titanium-sapphire",
+            "cerium",
+            "chromium",
+            "others"
+          ]
+        },
+        "laser_defocus": {
+          "type": "boolean",
+          "title": "laser defocus",
+          "description": "Defocusing of laser"
+        },
+        "filter_type": {
+          "type": "string",
+          "title": "type of rejection filters",
+          "description": "pptical filters used to prevent stray light from reaching spectrometer/detector"
+        },
+        "cutoff_frequency": {
+          "title": "cutoff frequency [cm-1]",
+          "description": "Low frequency cut-off in 1/cm",
+          "type": "number"
+        },
+        "integration_time": {
+          "title": "integration time [s]",
+          "description": "The measure of how long the scattered light is exposed to the detector. Also known as exposure",
+          "type": "number"
+        },
+        "accumulation": {
+          "type": "integer",
+          "title": "accumulation",
+          "description": "The number of scan on each sample exposure. "
+        },
+        "background": {
+          "type": "integer",
+          "title": "background scan",
+          "description": "The number of scan for background"
+        },
+        "collection_time": {
+          "title": "collection time [s]",
+          "description": "the total acquisition time in second",
+          "type": "number"
+        },
+        "photobleaching": {
+          "title": "photobleaching time [s]",
+          "description": "Duration of a photobleaching for a sample to reduce fluorescence",
+          "type": "number"
+        },
+        "resolution": {
+          "title": "resolution [cm-1]",
+          "description": "the spectral resolution of a Raman spectrometer",
+          "type": "number"
+        },
+        "maxrange": {
+          "title": "maximum spectral range [cm-1]",
+          "description": "The maximum spectral range of a Raman spectrum",
+          "type": "number"
+        },
+        "minrange": {
+          "title": "minimum spectral range [cm-1]",
+          "description": "The minimum spectral range of a Raman spectrum",
+          "type": "number"
+        },
+        "calibration": {
+          "title": "calibration standard material",
+          "description": "Type of material used to calibrate the Raman spectra",
+          "type": "string",
+          "enum": [
+            "silicon wafer",
+            "diamond",
+            "calcite",
+            "benzonitrile",
+            "cyclohexane",
+            "polystyrene",
+            "indene",
+            "neon lamp",
+            "carbon tertrachloride",
+            "4-acetamidophenol",
+            "others"
+          ]
+        },
+        "position": {
+          "type": "number",
+          "title": "calibration position [cm-1]",
+          "description": "The peak position against which the standard material is calibrated"
+        },
+        "grating_type": {
+          "type": "string",
+          "title": "grating type",
+          "description": "Type of grating"
+        },
+        "grating_density": {
+          "title": "grating density [lines/mm]",
+          "description": "Line density of grating in dispersive Raman instrument in lines/mm",
+          "type": "number"
+        },
+        "aperture_size": {
+          "type": "number",
+          "title": "aperture size [μm]",
+          "description": "Size of the aperture that controls how much Raman signal passes into the spectrograph and onto the detector"
+        },
+        "aperture_type": {
+          "type": "string",
+          "title": "aperture type",
+          "description": "Type of spectrograph aperture",
+          "enum": [
+            "pinhole",
+            "slit"
+          ]
+        },
+        "micro_confocality": {
+          "type": "boolean",
+          "title": "confocality",
+          "description": "whether a confocal microscope is used which allows 3D Raman imaging"
+        },
+        "micro_polar": {
+          "title": "polarization",
+          "description": "Y or N for polarization of excitation radiation with degrees and orientation followed by Y or N for polarization of scattered radiation with degrees and orientation (Example: incident, Y, 45 degrees CCW, scattered, N)",
+          "type": "string"
+        },
+        "micro_objective": {
+          "title": "objective [x]",
+          "description": "Front optical element in a microscope that gathers or brings light from or to the object being observed",
+          "type": "integer"
+        },
+        "micro_model": {
+          "title": "microscope model",
+          "description": "Model name of the microscope",
+          "type": "string"
+        },
+        "micro_manufacturer": {
+          "title": "microscope manufacturer",
+          "description": "Manufacturer name of the microscope",
+          "type": "string"
+        },
+        "detector_model": {
+          "type": "string",
+          "title": "detector model",
+          "description": "Model name of the CCD detecor"
+        },
+        "detector_manufacturer": {
+          "type": "string",
+          "title": "detector manufacturer",
+          "description": "Manufacturer name of the CCD detector"
+        },
+        "detector_cooling": {
+          "type": "string",
+          "title": "detector cooling",
+          "description": "Cooling method based on the thermoelectric effect to cool the\nsensitive light detectors (CCDs). For example,  peltier or liquid nitrogen"
+        },
+        "detecor_cooling_temp": {
+          "type": "string",
+          "title": "cooling temperature",
+          "description": "the cooling temperature for the CCD detector. For example, room temperature, 200K, or -90ºC"
+        },
+        "detector_pixel": {
+          "type": "string",
+          "title": "detector pixel",
+          "description": "Pixel size of the CCD detector. For example, 1024X256"
+        }
+      },
+      "type": "object"
+    },
+    "spectrum_result": {
+      "title": "Result of a Raman Spectrum",
+      "description": "The identification of a sample",
+      "items": {
+        "title": "Outcome",
+        "type": "object",
+        "properties": {
+          "identified_material": {
+            "title": "name of identified material",
+            "type": "string"
+          },
+          "$id": {
+            "title": "ID ",
+            "description": "ID of the identified material in a database",
+            "type": "string"
+          },
+          "database": {
+            "title": "Database",
+            "description": "Chosen database used for finding a match",
+            "type": "string"
+          },
+          "matching_spectrum": {
+            "type": "string",
+            "title": "matching spectrum",
+            "description": "upload the spectrum file of the match",
+            "contentEncoding": "base64"
+          }
+        }
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "e-rihs_pid",
+    "prefered_label",
+    "creation_date",
+    "author",
+    "technique"
+  ]
+}

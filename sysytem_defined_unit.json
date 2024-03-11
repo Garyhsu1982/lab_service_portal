@@ -1,0 +1,346 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "systemDefined": {
+      "type": "object",
+      "title": "System-defiend field",
+      "description": "The field type System-defined allows to add values with a unit. Units are assigned to certain standards in the research field but should meet common conventions and definitions. Depending on the unit, different conversions are available.",
+      "properties": {
+        "acceleration": {
+          "title": "Acceleration",
+          "description": "",
+          "type": "string",
+          "enum": [
+            "mm/s²"
+          ]
+        },
+        "agitation": {
+          "title": "Agitation",
+          "description": "",
+          "type": "string",
+          "enum": [
+            "rpm"
+          ]
+        },
+        "amountEnzyme": {
+          "type": "string",
+          "title": "Amount enzyme as nmol/min",
+          "description": "",
+          "enum": [
+            "U",
+            "mU"
+          ]
+        },
+        "chemConMolarity": {
+          "type": "string",
+          "title": "Chem. concentration (Molarity)",
+          "description": "",
+          "enum": [
+            "mol/L (M)",
+            "mmol/L (mM)",
+            "nmol/L (nM)",
+            "pmol/L (pM)"
+          ]
+        },
+        "chemDistance": {
+          "type": "string",
+          "title": "Chem. distances",
+          "description": "",
+          "enum": [
+            "Å"
+          ]
+        },
+        "concentration": {
+          "type": "string",
+          "title": "Concentration",
+          "description": "",
+          "enum": [
+            "ng/L",
+            "mg/L",
+            "g/L"
+          ]
+        },
+        "conductivity": {
+          "type": "string",
+          "title": "Conductivity",
+          "description": "",
+          "enum": [
+            "S/m"
+          ]
+        },
+        "degree": {
+          "type": "string",
+          "title": "Degree",
+          "description": "",
+          "enum": [
+            "°"
+          ]
+        },
+        "duration": {
+          "type": "string",
+          "title": "Duration",
+          "description": "",
+          "enum": [
+            "day(s)",
+            "hour(s)",
+            "min(s)",
+            "sec(s)",
+            "millisec (ms)"
+          ]
+        },
+        "elasticModulus": {
+          "type": "string",
+          "title": "Elastic modulus",
+          "description": "",
+          "enum": [
+            "MPa",
+            "kPa",
+            "Pa"
+          ]
+        },
+        "enzymeActivity": {
+          "type": "string",
+          "title": "Enzyme activity",
+          "description": "",
+          "enum": [
+            "U/L",
+            "U/mL"
+          ]
+        },
+        "frequency": {
+          "title": "Frequency",
+          "description": "",
+          "type": "string",
+          "enum": [
+            "Hz",
+            "kHz"
+          ]
+        },
+        "mass": {
+          "type": "string",
+          "title": "Mass",
+          "description": "",
+          "enum": [
+            "g",
+            "mg",
+            "µg",
+            "ng",
+            "pg"
+          ]
+        },
+        "massMolecule": {
+          "type": "string",
+          "title": "Mass molecule",
+          "description": "",
+          "enum": [
+            "D",
+            "kD"
+          ]
+        },
+        "molecularWeight": {
+          "type": "string",
+          "title": "Molecular weight",
+          "description": "",
+          "enum": [
+            "g/mol"
+          ]
+        },
+        "percentage": {
+          "type": "string",
+          "title": "Percentage",
+          "description": "",
+          "enum": [
+            "%"
+          ]
+        },
+        "pressure": {
+          "type": "string",
+          "title": "Pressure",
+          "description": "",
+          "enum": [
+            "atm",
+            "Pa",
+            "Torr"
+          ]
+        },
+        "reactionRate": {
+          "type": "string",
+          "title": "Reaction rate",
+          "description": "",
+          "enum": [
+            "mol/Lmin",
+            "mol/Ls"
+          ]
+        },
+        "speed": {
+          "type": "string",
+          "title": "Speed",
+          "description": "",
+          "enum": [
+            "cm/s",
+            "mm/s",
+            "cm/h",
+            "mm/h"
+          ]
+        },
+        "surface": {
+          "title": "Surface",
+          "description": "",
+          "type": "string",
+          "enum": [
+            "A²",
+            "mm²",
+            "cm²"
+          ]
+        },
+        "temperature": {
+          "type": "string",
+          "title": "Temperature",
+          "description": "",
+          "enum": [
+            "°C",
+            "°F",
+            "K"
+          ]
+        },
+        "turnoverNumber": {
+          "type": "string",
+          "title": "Turnover number",
+          "description": "",
+          "enum": [
+            "1/s"
+          ]
+        },
+        "dynamicViscosity": {
+          "title": "Dynamic viscosity",
+          "description": "",
+          "type": "string",
+          "enum": [
+            "Pas",
+            "mPas"
+          ]
+        },
+        "voltage": {
+          "type": "string",
+          "title": "Voltage",
+          "description": "",
+          "enum": [
+            "mV",
+            "V"
+          ]
+        },
+        "volume": {
+          "type": "string",
+          "title": "Volume",
+          "description": "",
+          "enum": [
+            "l",
+            "ml",
+            "µl",
+            "nl"
+          ]
+        },
+        "current": {
+          "type": "string",
+          "title": "Current",
+          "description": "",
+          "enum": [
+            "A",
+            "mA",
+            "µA",
+            "nA"
+          ]
+        },
+        "density": {
+          "type": "string",
+          "title": "Density",
+          "description": "",
+          "enum": [
+            "g/cm3",
+            "kg/l"
+          ]
+        },
+        "electricField": {
+          "type": "string",
+          "title": "Electric field",
+          "description": "",
+          "enum": [
+            "V/m"
+          ]
+        },
+        "energy": {
+          "type": "string",
+          "title": "Energy",
+          "description": "",
+          "enum": [
+            "J",
+            "kJ"
+          ]
+        },
+        "flowRate": {
+          "type": "string",
+          "title": "Flow rate",
+          "description": "",
+          "enum": [
+            "µl/min",
+            "ml/min",
+            "l/min"
+          ]
+        },
+        "heatingRate": {
+          "type": "string",
+          "title": "Heating rate",
+          "description": "",
+          "enum": [
+            "K/min"
+          ]
+        },
+        "length": {
+          "type": "string",
+          "title": "Length",
+          "description": "",
+          "enum": [
+            "mm",
+            "cm",
+            "m"
+          ]
+        },
+        "magneticFluxDensity": {
+          "type": "string",
+          "title": "Magnetic flux density/conductivity",
+          "description": "",
+          "enum": [
+            "T"
+          ]
+        },
+        "specificVolume": {
+          "type": "string",
+          "title": "Specific volume",
+          "description": "",
+          "enum": [
+            "cm3/g"
+          ]
+        },
+        "subatomicLength": {
+          "type": "string",
+          "title": "Subatomic length",
+          "description": "",
+          "enum": [
+            "µm",
+            "nm",
+            "pm"
+          ]
+        },
+        "kinematicViscosity": {
+          "title": "Kinematic viscosity",
+          "description": "",
+          "type": "string",
+          "enum": [
+            "m²/s"
+          ]
+        }
+      }
+    }
+  }
+}
